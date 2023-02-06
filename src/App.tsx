@@ -1,7 +1,8 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
+import Navbar from './components/navbar/Navbar';
 
-import Navbar from './Navbar';
 import Router from './Router';
 
 import { setLanguage, verifyPrefeerLanguage } from './services/Langague';
@@ -25,7 +26,9 @@ html {
   position: relative;
 }
 
+
 `;
+
 
 const App = () => {
 
@@ -34,11 +37,11 @@ const App = () => {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
       <Navbar />
       <Router />
-    </>
+    </BrowserRouter>
   );
 };
 
