@@ -11,8 +11,9 @@ const Router = (props: RouterProps) => {
   return (
     <>
         <Routes>
-                <Route path='' />
-                <Route path='about' />
+                <Route path='/' />
+                <Route path='/portfolio' />
+                <Route path='/cv' />
                 <Route path='*' element={<Navigate to="" />}/> 
         </Routes>
     </>
