@@ -1,7 +1,13 @@
+/**
+ * Navbar component file
+ * 07/02/2023
+ * @author Pedro Foltram @pedroaugustofolb@gmail.com
+ */
+
 import React, {useState} from 'react'
 
 // service to change language
-import { getLanguage, setLanguage } from '../../services/Langague' 
+import { setLanguage } from '../../services/Langague' 
 
 //Navbar Styles
 import { 
@@ -18,10 +24,9 @@ import {
 
 
 type NavbarProps = {
-
+    language: string | null,
 }
-const Navbar = (Props: NavbarProps) => {
-    const language: string | null = getLanguage()
+const Navbar = ({language}: NavbarProps) => {
     const [Modal, setModal] = useState<boolean>(false);
 
     return (
@@ -31,7 +36,7 @@ const Navbar = (Props: NavbarProps) => {
             <MobileButton onClick={() => setModal(!Modal)}>
                 <MobileStruct active={Modal}/>
                 <MobileModal active={Modal}>
-                    <MobileList>
+                    <MobileList active={Modal}>
                         <NavItem to="/" home/>
                         <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
                         <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
