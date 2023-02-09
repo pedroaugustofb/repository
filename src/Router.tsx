@@ -7,7 +7,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Curriculum from './pages/cv/Curriculum';
-import Home from './pages/home/Home';
+import HomeController from './pages/home/HomeController';
 import Portfolio from './pages/portfolio/Portfolio';
 
 
@@ -20,7 +20,7 @@ const Router = ({language}: RouterProps) => {
   return (
     <>
         <Routes>
-                <Route path='/' element={<Home language={language}/>}/>
+                <Route path='/' element={<HomeController language={language}/>}/>
                 <Route path='/portfolio' element={<Portfolio language={language}/>}/>
                 <Route path='/cv' element={<Curriculum language={language}/>}/>
                 <Route path='*' element={<Navigate to="" />}/> 

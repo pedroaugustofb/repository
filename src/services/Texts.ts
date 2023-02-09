@@ -11,5 +11,17 @@ export const getText = (text: string) => {
             
         case 'Welcome Title(PT-BR)':
             return "Pedro Foltram Desenvolvedor Web"
+        
+        case 'Welcome Text(ENG)':
+            return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum."
+        
+        case 'Welcome Text(PT-BR)':
+            return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum."
+        
+        case 'About Title(PT-BR)':
+            return 'Sobre Mim'
+
+        case 'About Title(ENG)':
+            return 'About Me'
     }
 }

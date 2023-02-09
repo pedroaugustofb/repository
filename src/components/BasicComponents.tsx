@@ -129,7 +129,7 @@ ${props => props.color && `color: ${props.color};`}
 
 const StyledA = styled.a<StyleIcon>`
 hover{
-    ${props => props.hover && `${props.hover};`}
+    opacity: 0.7;
 }
 `
 export const LinkedIcon = ({href, icon, color, hover, font, children}: IconProps) => {
@@ -141,3 +141,35 @@ export const LinkedIcon = ({href, icon, color, hover, font, children}: IconProps
 
     )
 }
+
+interface TitleProps {
+    color?: string,
+    fontSize?: string,
+    fontFamily?: string,
+    fontWeight?: string,
+    margin?: string,
+    padding?: string,
+}
+export const Title = styled.h1<TitleProps>`
+${props => props.color && `
+    color: ${props.color};
+`}
+${props => props.fontSize && `
+    font-size: ${props.fontSize};
+`}
+${props => props.fontWeight && `
+    font-weight: ${props.fontWeight};
+`}
+${props => props.fontFamily ? `
+    font-family: ${props.fontFamily};
+    `:`
+    font-family: 'Karla', sans-serif;
+`}
+${props => props.margin && `
+    margin: ${props.margin};
+`}
+
+${props => props.padding && `
+    padding: ${props.padding};
+`}
+`
