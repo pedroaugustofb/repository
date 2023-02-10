@@ -71,7 +71,7 @@ type Props = {
 
 const HomeView = ({language}: Props) => {
   return (
-    <div>
+    <>
             {/* Section 1: Landing */}
             <LandingSection flex center width='100%'  background='#f8f5f4' margin='0 2rem 0 0' overflow="visible">
             <OverlayBackground />
@@ -161,7 +161,7 @@ const HomeView = ({language}: Props) => {
                 </AboutMeTextsContainer>
             </AboutMeContentContainer>
         </AboutSection>
-    </div>
+    </>
   )
 }
 
