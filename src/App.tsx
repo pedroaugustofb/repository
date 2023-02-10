@@ -1,7 +1,8 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
+import Navbar from './components/navbar/Navbar';
 
-import Navbar from './Navbar';
 import Router from './Router';
 
 import { setLanguage, verifyPrefeerLanguage } from './services/Langague';
@@ -12,11 +13,11 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
 }	
 body {
-  background-color: #F4F5F7;
+  background-color: #fff;
   height: 100%;
   overflow-x: hidden;
   p, span, h1, h2, h3, h4, h5, h6, button, label, div, textarea, input{
-    font-family: 'Work Sans ', sans-serif;
+    font-family: 'Karla', sans-serif;
   }
 }
 html {
@@ -25,7 +26,9 @@ html {
   position: relative;
 }
 
+
 `;
+
 
 const App = () => {
 
@@ -34,11 +37,11 @@ const App = () => {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <GlobalStyle />
       <Navbar />
       <Router />
-    </>
+    </BrowserRouter>
   );
 };
 
