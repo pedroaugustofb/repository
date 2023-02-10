@@ -6,6 +6,7 @@
 
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 //React-icons
 import { 
@@ -62,6 +63,7 @@ import {
     IconDiv,
     TitleAboutContainer,
     TitleLineAnimation,
+    OverlayBackground2,
 } from './style'
 
 
@@ -72,9 +74,11 @@ type Props = {
 const HomeView = ({language}: Props) => {
   return (
     <>
+            <OverlayBackground />
+            <OverlayBackground2 />
+
             {/* Section 1: Landing */}
             <LandingSection flex center width='100%'  background='#f8f5f4' margin='0 2rem 0 0' overflow="visible">
-            <OverlayBackground />
             <TextContainer flex width='40%' height='80%' center>
                 <IconsContainer width='20%' height='100%' flex center>
                     <LinkedIcon href='https://github.com/pedroaugustofb' font='1.8rem'>
@@ -96,7 +100,7 @@ const HomeView = ({language}: Props) => {
                             {language === 'PT-BR' ? getText("Welcome Title(PT-BR)") : getText("Welcome Title(ENG)") }
                         </WelcomeTitle>
                     </TitleArea>
-                    <TextArea>
+                    <TextArea margin='0 0  2rem 0'>
                         <WelcomeText>
                             {language === 'PT-BR' ? getText("Welcome Text(PT-BR)") : getText("Welcome Text(ENG)") }
                         </WelcomeText>
@@ -143,7 +147,7 @@ const HomeView = ({language}: Props) => {
                     <Container flex  width='100%' style={{ textAlign: 'left', maxWidth: '461px', }} >
                         <Title color="#14261C" fontSize='25px' fontWeight='800' fontFamily="'Rubik', sans-serif" mobile='18px' >{language === "PT-BR" ? "Experiência em Tecnologias." : "Experience in Technologies." }</Title>
                     </Container>
-                    <Container width='70%' grid column={false} padding="1rem" style={{gap: '25px', gridTemplateColumns: 'repeat(auto-fill, 2rem)' }}>
+                    <Container width='100%' grid column={false} padding="2rem 1rem" style={{gap: '25px', gridTemplateColumns: 'repeat(auto-fill, 32px)', maxWidth: '406px' }}>
                         <IconDiv><SiJavascript /></IconDiv>
                         <IconDiv><SiTypescript /></IconDiv>
                         <IconDiv><FaReact /></IconDiv>
@@ -158,6 +162,13 @@ const HomeView = ({language}: Props) => {
                         <IconDiv><SiSpringboot /></IconDiv>
                         <IconDiv><SiMysql /></IconDiv>
                     </Container>
+                    <WelcomeButtonsContainer>
+                        <DefaultButton medium ghost borderColor='#14261C' margin='1rem'>
+                            <Link to="/portfolio" style={{color:"#14261C",textDecoration:"none"}}>
+                                {language === "PT-BR" ? "Ver Portfolio" : "Show Portfolio"}
+                            </Link>
+                        </DefaultButton>
+                    </WelcomeButtonsContainer>
                 </AboutMeTextsContainer>
             </AboutMeContentContainer>
         </AboutSection>

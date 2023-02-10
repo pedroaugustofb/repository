@@ -56,6 +56,9 @@ text-decoration: none;
 font-size: 1.1825rem;
 font-family: 'Rubik', sans-serif;
 color: #14261C;
+@media(max-width: 1126px){
+    font-size: 0.8rem;
+}
 :hover{
     cursor:pointer;
     color: #32CD32;

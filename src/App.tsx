@@ -4,7 +4,7 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
 import Navbar from './components/navbar/Navbar';
@@ -36,8 +36,23 @@ html {
 
 `;
 
+const getBackgroundColor = (pathname: string) => {
+  switch (pathname){
+      case '/':
+          return "#f8f5f4"
+      case '/portfolio':
+          return "#a825f4"
+      case '/cv':
+          return "#c8f544"
+      default:
+          return 'transparent'
+  }
+}
+
 
 const App = () => {
+
+  const [Pathname, setPath] = useState<string>('/')
 
   if(!verifyPrefeerLanguage()){
     setLanguage('PT-BR');
@@ -48,8 +63,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Navbar language={Language}/>
-      <Router language={Language}/>
+      <Navbar language={Language} background={getBackgroundColor(Pathname)} setPath={setPath} />
+      <Router language={Language} setPath={setPath}/>
     </BrowserRouter>
   );
 };

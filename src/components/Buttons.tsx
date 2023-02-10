@@ -22,6 +22,7 @@ export const DefaultButton = styled.button<ButtonProps>`
 border: 1px solid ${props => props.borderColor ? props.borderColor : '#32CD32'};
 border-radius: 4px;
 font-family: 'Rubik', sans-serif;
+transition: .2s;
 
 :hover{
     cursor: pointer;
@@ -32,15 +33,15 @@ ${props => props.ghost ? `
     color: #14261C;
     opacity: 0.8;
     :hover {
-        background-color: #32CD32;
+        background-color: rgba(144, 238, 144, 0.1);
         color: #14261C;
         opacity: 1;
     }
     ` : `
-    background-color: #32CD32;
+    background-color: rgba(144, 238, 144, 0.7);
     color: #14261C;
     :hover {
-        opacity: 0.9;
+        background-color: rgba(144, 238, 144, 1);
     }
     `
 

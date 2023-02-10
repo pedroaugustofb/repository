@@ -12,17 +12,29 @@ import Portfolio from './pages/portfolio/Portfolio';
 
 
 type RouterProps = {
-  language: string | null
+  language: string | null,
+  setPath: (value:string) => void,
 };
 
+type ReturnPathProps = {
+  setPath: (pathname: string) => void,
+  pathname: string,
+  children: any,
+}
 
-const Router = ({language}: RouterProps) => {
+
+const ReturnPath = ({setPath, pathname, children}: ReturnPathProps) => {
+  setPath(pathname);
+  return (<>{children}</>);
+}
+
+const Router = ({language, setPath}: RouterProps) => {
   return (
     <>
         <Routes>
-                <Route path='/' element={<HomeController language={language}/>}/>
-                <Route path='/portfolio' element={<Portfolio language={language}/>}/>
-                <Route path='/cv' element={<Curriculum language={language}/>}/>
+                <Route path='/' element={<ReturnPath setPath={setPath} pathname="/"><HomeController language={language}/></ReturnPath>}/>
+                <Route path='/portfolio' element={<ReturnPath setPath={setPath} pathname="/portfolio"><Portfolio language={language}/></ReturnPath>}/>
+                <Route path='/cv' element={<ReturnPath setPath={setPath} pathname="/portfolio"><Curriculum language={language}/></ReturnPath>}/>
                 <Route path='*' element={<Navigate to="" />}/> 
         </Routes>
     </>

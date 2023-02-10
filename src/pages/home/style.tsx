@@ -34,6 +34,16 @@ export const OverlayBackground = styled.div`
 }
 `
 
+export const OverlayBackground2 = styled(OverlayBackground)`
+@media(min-width: 1126px){
+    width: 50%;
+    height: 46%;
+    top: 136vh;
+    left: 67%;
+    background: rgba(248, 245, 244, 0.5);
+}
+`
+
 export const LandingSection = styled(BasicSection)`
 overflow: hidden;
 height: calc(100vh - 6.5rem);
@@ -132,7 +142,6 @@ display:flex;
 justify-content:flex-start;
 align-items: center;
 text-align: justify;
-margin-bottom: 2rem;
 @media(max-width: 1126px){
     text-align: justify;
     justify-content: center;
@@ -189,11 +198,9 @@ const LookDownContainer = styled(Container)`
 }
 
 position: absolute;
-right: -20px;
-top: calc(100vh - 120px);
+right: 0;
+top: calc(100vh - 150px);
 display: flex;
-justify-content: center;
-align-items: center;
 transform: rotate(90deg);
 
 `
@@ -259,13 +266,14 @@ border-bottom: 3px solid red;
 export const AboutMeContentContainer = styled(Container)`
 width: 75%;
 height: 100%;
-padding: 2rem;
+padding: 4rem 2rem;
 display: flex;
 justify-content: center;
-align-items: center;
 @media(max-width: 1126px){
     flex-direction: column-reverse;
+    align-items: center;
     width: calc(100% - 2rem);
+    padding: 2rem;
 }
 `
 
@@ -276,7 +284,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-padding: 2rem 4rem;
+padding: 0rem 4rem;
 @media(max-width: 1126px){
     max-width: 534px;
     width: 100%;
@@ -311,7 +319,7 @@ align-items: center;
 `
 
 export const BackgroundImage = styled(Container)`
-width:70%;
+width:60%;
 height: 550px;
 min-width: 300px;
 background: rgba(144, 238, 144, 0.5);

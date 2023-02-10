@@ -22,33 +22,21 @@ import {
     Bar
 } from './style'
 
-const getBackgroundColor = (pathname: string) => {
-    switch (pathname){
-        case '/':
-            return "#f8f5f4"
-        case '/portfolio':
-            return "#a825f4"
-        case '/cv':
-            return "#c8f544"
-        default:
-            return 'transparent'
-    }
-}
-
 type NavbarProps = {
     language: string | null,
+    background?: string,
+    setPath: (value:string) => void,
 }
-const Navbar = ({language}: NavbarProps) => {
+const Navbar = ({language, background, setPath}: NavbarProps) => {
     const [Modal, setModal] = useState<boolean>(false);
-    const [Pathname, setPath] = useState<string>('/')
 
     return (
         <>
-        <NavbarContainer backgroundColor={getBackgroundColor(Pathname)}>
+        <NavbarContainer backgroundColor={background}>
             {/*Mobile*/}
             <MobileButton onClick={() => setModal(!Modal)}>
                 <MobileStruct active={Modal}/>
-                <MobileModal active={Modal} backgroundColor={getBackgroundColor(Pathname)}>
+                <MobileModal active={Modal} backgroundColor={background}>
                     <MobileList active={Modal}>
                         <NavItem to="/" home setPath={setPath}/>
                         <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" setPath={setPath}/>
