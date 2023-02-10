@@ -36,6 +36,7 @@ export const OverlayBackground = styled.div`
 
 export const LandingSection = styled(BasicSection)`
 overflow: hidden;
+height: calc(100vh - 6.5rem);
 align-items: flex-start;
 @media(max-width: 1126px){
     flex-direction: column;
@@ -106,7 +107,7 @@ letter-spacing: -1px;
     text-align: center;
     justify-content:center;
     align-items: center;
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 2rem 0;
 }
 @media(max-width: 1400px){
     font-size: 1.84rem;
@@ -135,7 +136,8 @@ margin-bottom: 2rem;
 @media(max-width: 1126px){
     text-align: justify;
     justify-content: center;
-    max-width: 440px;
+    font-size: 1.5rem;
+    width: 100%;
     margin: 0;
 }
 @media(max-width: 1400px){
@@ -216,28 +218,139 @@ export const LookDown = ({language}: LookDownProps) => {
 
 /* Section 2 */
 
-export const AboutContainer = styled(Container)`
+export const AboutSection = styled(BasicSection)`
 z-index: 3;
+min-height: 90vh;
 position: relative;
-align-items: flex-start;
 @media(max-width: 1126px){
     postiion: static;
+    padding: 1rem 0rem;
+    height: 200vh;
 }
 `
 export const AboutTitle = styled(Title)`
 color: #14261C;
 opacity: 0.9;
+margin-bottom: 1rem;
 @media(max-width: 1126px){
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 `
 
 export const TitleLine = styled.div`
-width: 150px;
+width: 100%;
 border-bottom: 3px solid #14261C;
-margin: 1rem;
 @media(max-width: 1126px){
-    border-bottom: 2px solid #14261C;
-    width: 100px;
+    border-top: 2px solid #14261C;
+    width: 100%;
+}
+`
+
+export const TitleAboutContainer = styled(Container)`
+
+`
+export const TitleLineAnimation = styled(TitleLine)`
+width: 1px;
+height: 1px;
+border-bottom: 3px solid red;
+`
+
+export const AboutMeContentContainer = styled(Container)`
+width: 75%;
+height: 100%;
+padding: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+@media(max-width: 1126px){
+    flex-direction: column-reverse;
+    width: calc(100% - 2rem);
+}
+`
+
+export const AboutMeTextsContainer = styled(Container)`
+width: calc(50% - 2rem);
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+padding: 2rem 4rem;
+@media(max-width: 1126px){
+    max-width: 534px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+@media(max-width: 400px){
+    p{
+        padding: 0 5rem;
+
+    }
+}
+`
+
+export const AboutMeImageContainer = styled(Container)`
+width: calc(50% - 2rem);
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+@media(max-width: 1126px){
+    width: 100%;
+    align-items: center;
+    transform: translateX(-20px);
+
+}
+@media(max-width: 400px){
+    transform: scale(0.7) translateX(-20px);
+}
+`
+
+export const BackgroundImage = styled(Container)`
+width:70%;
+height: 550px;
+min-width: 300px;
+background: rgba(144, 238, 144, 0.5);
+transition: .5s;
+:hover{
+    background: rgba(144, 238, 144, 1);
+    transform: scale(1.1);
+}
+border-radius: 15px;
+transform: translateX(20px);
+display: flex;
+align-items: center;
+@media(max-width: 1126px){
+    height: 100%;
+}
+`
+
+export const Image = styled.div`
+width: 100%;
+height: calc(100% - 40px);
+background: url("https://websitedemos.net/personal-portfolio-02/wp-content/uploads/sites/770/2021/02/section-1-bg1.jpg") no-repeat center center;
+background-size: cover;
+border-radius: 15px;
+transform: translateX(25px);
+@media(max-width: 1126px){
+    tranform: translateX(0px);
+    transform: scale(0.92);
+    height: 100%;
+}
+`
+
+export const IconDiv = styled(Container)`
+font-size: 2rem;
+opacity: 0.8;
+transform: scale(1);
+color: #14161C;
+transition: .5s;
+:hover{
+    opacity: 1;
+    transform: scale(1.7);
 }
 `

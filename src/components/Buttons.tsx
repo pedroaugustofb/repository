@@ -21,7 +21,7 @@ interface ButtonProps {
 export const DefaultButton = styled.button<ButtonProps>`
 border: 1px solid ${props => props.borderColor ? props.borderColor : '#32CD32'};
 border-radius: 4px;
-font-family: 'Karla', sans-serif;
+font-family: 'Rubik', sans-serif;
 
 :hover{
     cursor: pointer;
@@ -52,6 +52,7 @@ ${props => props.medium && `
     height: 48px;
     padding: 4px 32px;
     font-size: 14px;
+    font-weight:700;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
     @media(max-width: 1126px){
         min-width: 100px;

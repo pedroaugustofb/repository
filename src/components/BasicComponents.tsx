@@ -149,6 +149,7 @@ interface TitleProps {
     fontWeight?: string,
     margin?: string,
     padding?: string,
+    mobile?: string,
 }
 export const Title = styled.h1<TitleProps>`
 ${props => props.color && `
@@ -172,4 +173,10 @@ ${props => props.margin && `
 ${props => props.padding && `
     padding: ${props.padding};
 `}
+
+@media(max-width: 1126px){
+    ${props => props.mobile && `
+    font-size: ${props.mobile}
+    `}
+}
 `

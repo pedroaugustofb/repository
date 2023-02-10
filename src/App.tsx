@@ -24,7 +24,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   p, span, h1, h2, h3, h4, h5, h6, button, label, div, textarea, input{
-    //font-family: 'Karla', sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
 }
 html {
