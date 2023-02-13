@@ -69,6 +69,10 @@ justify-content: center;
 margin-bottom: 3.5rem;
 a{
     margin: 16px 0px;
+    transition: 0.3s;
+    :hover{
+        transform: scale(1.2);
+    }
 }
 align-items: end;
 flex-direction: column;
@@ -311,6 +315,7 @@ align-items: center;
     width: 100%;
     align-items: center;
     transform: translateX(-20px);
+    margin: 0 0 4rem 0;
 
 }
 @media(max-width: 400px){
@@ -334,6 +339,7 @@ display: flex;
 align-items: center;
 @media(max-width: 1126px){
     height: 100%;
+    margin: 0 0 0rem 0;
 }
 `
 

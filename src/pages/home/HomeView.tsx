@@ -106,8 +106,7 @@ const HomeView = ({language}: Props) => {
                         </WelcomeText>
                     </TextArea>
                     <WelcomeButtonsContainer width='100%' height='100px'>
-                        {/*@ts-ignore */}
-                        <DefaultButton medium ghost margin='1rem' onClick={() => document.getElementById("section2").scrollIntoView({behavior: "smooth"}) }>{language === "PT-BR" ? "Saiba mais":"Learn more" }</DefaultButton>
+                        <DefaultButton medium ghost margin='1rem' onClick={() => document.getElementById("section2")!.scrollIntoView({behavior: "smooth"}) }>{language === "PT-BR" ? "Saiba mais":"Learn more" }</DefaultButton>
  
                         <DefaultButton medium margin='1rem' onClick={() => window.open("https://drive.google.com/file/d/1xaWvCGtUdSBY9mEIh42KlGZAie7WFlKH/view?usp=share_link")}>{language === "PT-BR" ? "Baixar Currículo":"Download Cv" }</DefaultButton>
                     </WelcomeButtonsContainer>

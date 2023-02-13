@@ -29,7 +29,7 @@ transition: .2s;
 }
 
 ${props => props.ghost ? `
-    background-color: #ffffff;
+    background-color: transparent;
     color: #14261C;
     opacity: 0.8;
     :hover {
@@ -53,6 +53,19 @@ ${props => props.medium && `
     height: 48px;
     padding: 4px 32px;
     font-size: 14px;
+    font-weight:700;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    @media(max-width: 1126px){
+        min-width: 100px;
+        padding: 0 10px;
+    }
+`}
+${props => props.small && `
+    min-width: 120px;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 4px 16px;
+    font-size: 12px;
     font-weight:700;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
     @media(max-width: 1126px){

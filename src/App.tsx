@@ -4,9 +4,10 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
+import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 
 import Router from './Router';
@@ -49,13 +50,11 @@ const getBackgroundColor = (pathname: string) => {
   }
 }
 
-
 const App = () => {
-
   const [Pathname, setPath] = useState<string>('/')
 
   if(!verifyPrefeerLanguage()){
-    setLanguage('PT-BR');
+    setLanguage('ENG');
   }
 
   const Language = getLanguage();
@@ -65,6 +64,7 @@ const App = () => {
       <GlobalStyle />
       <Navbar language={Language} background={getBackgroundColor(Pathname)} setPath={setPath} />
       <Router language={Language} setPath={setPath}/>
+      <Footer language={Language} setPath={setPath} background={getBackgroundColor(Pathname)} />
     </BrowserRouter>
   );
 };
