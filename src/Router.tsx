@@ -4,38 +4,40 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useGlobalContext } from './services/GlobalContext';
+
+//components
 import Curriculum from './pages/cv/Curriculum';
 import HomeController from './pages/home/HomeController';
 import Portfolio from './pages/portfolio/Portfolio';
 
+const Router = () => {
 
-type RouterProps = {
-  language: string | null,
-  setPath: (value:string) => void,
-};
+  const { language, setBackgroundColor } = useGlobalContext();
+  let location = useLocation();
 
-type ReturnPathProps = {
-  setPath: (pathname: string) => void,
-  pathname: string,
-  children: any,
-}
+  useEffect( () => {
+    switch (location.pathname){
+      case '/': 
+        return setBackgroundColor("#f8f5f4")
+      case '/portfolio':
+        return setBackgroundColor("#a825f4")
+      case '/cv':
+          return setBackgroundColor("#c8f544")
+      default:
+          return setBackgroundColor('transparent')
+  }
+  }, [location, setBackgroundColor])
 
-
-const ReturnPath = ({setPath, pathname, children}: ReturnPathProps) => {
-  setPath(pathname);
-  return (<>{children}</>);
-}
-
-const Router = ({language, setPath}: RouterProps) => {
   return (
     <>
         <Routes>
-                <Route path='/' element={<ReturnPath setPath={setPath} pathname="/"><HomeController language={language}/></ReturnPath>}/>
-                <Route path='/portfolio' element={<ReturnPath setPath={setPath} pathname="/portfolio"><Portfolio language={language}/></ReturnPath>}/>
-                <Route path='/cv' element={<ReturnPath setPath={setPath} pathname="/portfolio"><Curriculum language={language}/></ReturnPath>}/>
-                <Route path='*' element={<Navigate to="" />}/> 
+            <Route path='/' element={<HomeController language={language}/>}/>
+            <Route path='/portfolio' element={<Portfolio language={language}/>}/>
+            <Route path='/cv' element={<Curriculum language={language}/>}/>
+            <Route path='*' element={<Navigate to="" />}/> 
         </Routes>
     </>
   )

@@ -5,9 +5,8 @@
  */
 
 import React, { useState} from 'react'
+import { useGlobalContext } from '../../services/GlobalContext';
 
-// service to change language
-import { setLanguage } from '../../services/Langague' 
 
 //Navbar Styles
 import { 
@@ -22,33 +21,30 @@ import {
     Bar
 } from './style'
 
-type NavbarProps = {
-    language: string | null,
-    background?: string,
-    setPath: (value:string) => void,
-}
-const Navbar = ({language, background, setPath}: NavbarProps) => {
+const Navbar = () => {
     const [Modal, setModal] = useState<boolean>(false);
+
+    const { language, setLanguage, backgroundColor } = useGlobalContext();
 
     return (
         <>
-        <NavbarContainer backgroundColor={background}>
+        <NavbarContainer backgroundColor={backgroundColor}>
             {/*Mobile*/}
             <MobileButton onClick={() => setModal(!Modal)}>
                 <MobileStruct active={Modal}/>
-                <MobileModal active={Modal} backgroundColor={background}>
+                <MobileModal active={Modal} backgroundColor={backgroundColor}>
                     <MobileList active={Modal}>
-                        <NavItem to="/" home setPath={setPath}/>
-                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" setPath={setPath}/>
-                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" setPath={setPath}/>
+                        <NavItem to="/" home />
+                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
+                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
                     </MobileList>
                 </MobileModal>
             </MobileButton>
             {/*Desktop*/}
             <NavList>
-                <NavItem text={language === 'PT-BR' ? 'Início' : 'Home' } to="/" setPath={setPath}/>
-                <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio"  setPath={setPath}/>
-                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  setPath={setPath}/>
+                <NavItem text={language === 'PT-BR' ? 'Início' : 'Home' } to="/" />
+                <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
+                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
 
             </NavList>  
             <NavList>

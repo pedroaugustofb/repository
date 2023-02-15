@@ -5,9 +5,10 @@
  */
 
 import React from 'react'
-import { DefaultButton } from '../Buttons'
+import { useGlobalContext } from '../../services/GlobalContext'
 
 //Footer Styles
+import { DefaultButton } from '../Buttons'
 import {
     FooterContainer,
     ContactMeContainer,
@@ -18,15 +19,13 @@ import {
     FooterButtonsArea,
 } from './style'
 
-type Props = {
-    language: string | null,
-    background?: string,
-    setPath: (value:string) => void,
-}
 
-const Footer = ({background, language, setPath}: Props) => {
+const Footer = () => {
+
+    const { language, backgroundColor } = useGlobalContext();
+
   return (
-    <FooterContainer backgroundColor={background}>
+    <FooterContainer backgroundColor={backgroundColor}>
         <ContactMeContainer>
             <FooterTitleContainer>  
                 <h2>Pedro Foltram</h2>

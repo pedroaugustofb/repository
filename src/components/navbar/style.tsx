@@ -71,13 +71,13 @@ type ItemProps = {
     text?: string | null,
     to: string,
     home?: boolean,
-    setPath: (value: string) => void
+
 };
-export const NavItem = ({text, to, home, setPath }: ItemProps) => {
+export const NavItem = ({text, to, home}: ItemProps) => {
     
     return(
         <NavLi>
-            <NavLink to={to} onClick={() => setPath(to)}>
+            <NavLink to={to} >
                 {text}
                 {home && <i className="pi pi-home" style={{fontSize: '1rem'}}/>}
             </NavLink>
