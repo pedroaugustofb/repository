@@ -9,8 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
 
 //components
-import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/Navbar';
+//import Footer from './components/footer/Footer';
+//import Navbar from './components/navbar/Navbar';
 import Router from './Router';
 
 //services
@@ -52,9 +52,7 @@ const App = () => {
     <GlobalContext.Provider value={{ language, setLanguage, backgroundColor, setBackgroundColor }}>
       <BrowserRouter>
         <GlobalStyle />
-        <Navbar />
         <Router />
-        <Footer />
       </BrowserRouter>
     </GlobalContext.Provider>
   );

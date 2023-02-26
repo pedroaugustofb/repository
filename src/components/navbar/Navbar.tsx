@@ -4,9 +4,9 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, { useState} from 'react'
+import React, { useState, lazy, Suspense} from 'react'
+import { Outlet } from 'react-router-dom';
 import { useGlobalContext } from '../../services/GlobalContext';
-
 
 //Navbar Styles
 import { 
@@ -21,6 +21,9 @@ import {
     Bar
 } from './style'
 
+//components
+const Fallback = lazy( () => import("../Fallback").then(module => { return { default: module.default }}))
+
 const Navbar = () => {
     const [Modal, setModal] = useState<boolean>(false);
 
@@ -30,7 +33,7 @@ const Navbar = () => {
         <>
         <NavbarContainer backgroundColor={backgroundColor}>
             {/*Mobile*/}
-            <MobileButton onClick={() => setModal(!Modal)}>
+            <MobileButton onClick={() => setModal(prev => !prev)}>
                 <MobileStruct active={Modal}/>
                 <MobileModal active={Modal} backgroundColor={backgroundColor}>
                     <MobileList active={Modal}>
@@ -53,6 +56,9 @@ const Navbar = () => {
                 <LanguageButton active={language === 'PT-BR'} onClick={() => setLanguage('PT-BR')} >PT-BR</LanguageButton>
             </NavList>
         </NavbarContainer>
+        <Suspense fallback={ <Fallback />}>
+            <Outlet/>
+        </Suspense>
         </>
     )
   

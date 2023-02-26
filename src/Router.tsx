@@ -4,18 +4,23 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useGlobalContext } from './services/GlobalContext';
 
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+
 //components
-import Curriculum from './pages/cv/Curriculum';
-import HomeController from './pages/home/HomeController';
-import Portfolio from './pages/portfolio/Portfolio';
+
+const Home = lazy(() => import("./pages/home/HomeController"))
+const Portfolio = lazy(() => import("./pages/portfolio/PortfolioController"))
+const Curriculum = lazy(() => import("./pages/cv/CurriculumController"))
+
 
 const Router = () => {
 
-  const { language, setBackgroundColor } = useGlobalContext();
+  const { setBackgroundColor } = useGlobalContext();
   let location = useLocation();
 
   useEffect( () => {
@@ -34,10 +39,14 @@ const Router = () => {
   return (
     <>
         <Routes>
-            <Route path='/' element={<HomeController language={language}/>}/>
-            <Route path='/portfolio' element={<Portfolio language={language}/>}/>
-            <Route path='/cv' element={<Curriculum language={language}/>}/>
+          <Route path="/" element={<><Navbar /><Footer /></>}>
+
+            <Route path='/' element={<Home />}/>
+            <Route path='/portfolio' element={<Portfolio />}/>
+            <Route path='/cv' element={<Curriculum />}/>
             <Route path='*' element={<Navigate to="" />}/> 
+         
+          </Route>
         </Routes>
     </>
   )

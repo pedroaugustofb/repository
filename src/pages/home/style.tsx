@@ -66,7 +66,6 @@ z-index:1;
 
 export const IconsContainer = styled(Container)`
 justify-content: center;
-margin-bottom: 3.5rem;
 a{
     margin: 16px 0px;
     transition: 0.3s;
@@ -268,11 +267,12 @@ border-bottom: 3px solid red;
 `
 
 export const AboutMeContentContainer = styled(Container)`
-width: 75%;
+width: 81%;
 height: 100%;
 padding: 4rem 2rem;
 display: flex;
-justify-content: center;
+justify-content: space-between;
+margin-bottom: 3rem;
 @media(max-width: 1126px){
     flex-direction: column-reverse;
     align-items: center;

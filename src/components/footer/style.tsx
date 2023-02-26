@@ -15,7 +15,7 @@ width: 100vw;
 position: relative;
 z-index: 4;
 background: ${props => props.backgroundColor};
-background: blue;
+background: #66CDAA;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -23,14 +23,21 @@ align-items: center;
 `
 
 export const ContactMeContainer = styled(Container)`
-transform: translateY(-75px);
 height: 150px;
-width: 70%;
-background: red;
+width: 100%;
 border-radius: 10px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
+background: #387560;
+@media(min-width: 1126px){
+    transform: translateY(-75px);
+    width: 58.7%;
+}
+
+@media(max-width: 1126px){
+    padding: 1rem;
+}
 `
 
 export const FooterTitleContainer = styled(Container)`
@@ -40,7 +47,6 @@ justify-content: center;
 align-items: space-around;
 flex-direction: column;
 padding: 2rem;
-background: yellow;
 h2{
     font-size: 38px;
     color: #d7d7d7;
@@ -66,7 +72,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
-background: green;
 padding: 2rem;
 
 button{
@@ -82,25 +87,33 @@ border-top: 1px solid rgba(144, 238, 144, 0.7);
 margin: 2rem 0 0 0 ;
 height: 50px;
 width: 100%;
-padding: 0 15%;
-background: green;
+padding: 0 20.65%;
+background: transparent;
 display: flex;
 justify-content: start;
 align-items: center;
 `
 
 export const ContentContainer = styled(Container)`
-width: 70%;
+width: 58.7%;
 height: 282px;
 display: grid;
 grid-template-columns: repeat(auto-fill, 19%);
 grid-template-rows: 100%;
-background: pink;
-transform: translateY(-18.75px) scaleY(1.2);
+@media(min-width: 1126px){
+    transform: translateY(-18.75px) scaleY(1.2);
+}
+
+@media(max-width: 1126px){
+    width: 100%;
+    padding: 1rem 2rem;
+    grid-template-columns: repeat(auto-fill, 32%);
+}
 
 div{
    border-right: 2px solid #d7d7d7; 
    margin-right: 1%;
+   
 }
 
 div:last-child{

@@ -6,9 +6,10 @@
 
 import React, { Component } from 'react'
 
-type Props = {
-    language: string | null,
-}
+//view
+import CurriculumView from './CurriculumView'
+
+type Props = {}
 
 type State = {}
 
@@ -16,9 +17,8 @@ export default class Curriculum extends Component<Props, State> {
   state = {}
 
   render() {
-    const { language } = this.props;
     return (
-      <div>{language}</div>
+      <CurriculumView />
     )
   }
 }

@@ -7,6 +7,7 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useGlobalContext } from '../../services/GlobalContext';
 
 //React-icons
 import { 
@@ -16,6 +17,10 @@ import {
     AiOutlineWhatsApp,
  } from "react-icons/ai"
 
+import {
+    MdEmail,
+} from "react-icons/md"
+ 
 import {
 FaReact,
 FaNodeJs
@@ -67,11 +72,10 @@ import {
 } from './style'
 
 
-type Props = {
-    language: string | null ,
-}
+const HomeView = () => {
 
-const HomeView = ({language}: Props) => {
+    const { language } = useGlobalContext();
+
   return (
     <>
             <OverlayBackground />
@@ -92,6 +96,9 @@ const HomeView = ({language}: Props) => {
                     </LinkedIcon>
                     <LinkedIcon href='https://wa.me/5583986251686' font='1.8rem'>
                         <AiOutlineWhatsApp style={{color: '#14261C'}} />
+                    </LinkedIcon>
+                    <LinkedIcon href='mailto:pedroaugustofolb@gmail.com' font='1.8rem'>
+                        <MdEmail style={{color: '#14261C'}} />
                     </LinkedIcon>
                 </IconsContainer>
                 <WelcomeContainer width='80%' height='100%' flex center column>

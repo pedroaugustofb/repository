@@ -32,7 +32,7 @@ const Footer = () => {
                 <h5>Web Developer</h5>
             </FooterTitleContainer>
             <FooterButtonsArea>
-                <DefaultButton small ghost onClick={() => window.open("https://drive.google.com/file/d/1xaWvCGtUdSBY9mEIh42KlGZAie7WFlKH/view?usp=share_link")}>
+                <DefaultButton small ghost onClick={() => window.open("https://drive.google.com/file/d/1xaWvCGtUdSBY9mEIh42KlGZAie7WFlKH/view?usp=share_link")}  style={{ color: '#fff'}}>
                     {language === "PT-BR" ? "Baixar Currículo": "Download CV"}
                     <i style={{color: '#fff', marginLeft: '10px', fontSize: '14px'}} className='pi pi-download'/>
                 </DefaultButton>
