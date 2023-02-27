@@ -40,13 +40,13 @@ const Footer = () => {
         </ContactMeContainer>
         <ContentContainer>
             <ContentItem>
-                <h6>{language === 'PT-BR' ? "Continue em Contato" : "Stay in Touch"}</h6>
+                <h6>{language === 'PT-BR' ? "Navegação" : "Navigation"}</h6>
             </ContentItem>
             <ContentItem>
-                <h6>{language === 'PT-BR' ? "Continue em Contato" : "Stay in Touch"}</h6>
+                <h6>{language === 'PT-BR' ? "Redes Sociais" : "Social"}</h6>
             </ContentItem>
             <ContentItem>
-                <h6>{language === 'PT-BR' ? "Continue em Contato" : "Stay in Touch"}</h6>
+                <h6>{language === 'PT-BR' ? " Contato" : "Contact"}</h6>
             </ContentItem>
         </ContentContainer>
         <AllRightsReservedContainer>

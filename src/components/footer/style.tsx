@@ -96,7 +96,8 @@ align-items: center;
 
 export const ContentContainer = styled(Container)`
 width: 58.7%;
-height: 282px;
+height: fit-content;
+min-height: 233px;
 display: grid;
 grid-template-columns: repeat(auto-fill, 19%);
 grid-template-rows: 100%;
@@ -111,7 +112,7 @@ grid-template-rows: 100%;
 }
 
 div{
-   border-right: 2px solid #d7d7d7; 
+   //border-right: 2px solid #d7d7d7; 
    margin-right: 1%;
    
 }
@@ -125,9 +126,13 @@ div:last-child{
 export const ContentItem = styled.div`
 padding-left: 10px;
 h6{
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 14px;
     color: #14261C;
+    border-bottom: 1px solid #387560;
+    width: fit-content;
+    padding-bottom: 3px;
+    font-family: 'Karla', sans-serif;
 }
 
 
