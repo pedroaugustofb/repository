@@ -4,14 +4,19 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
-import Navbar from './components/navbar/Navbar';
 
+//components
+//import Footer from './components/footer/Footer';
+//import Navbar from './components/navbar/Navbar';
 import Router from './Router';
 
-import { getLanguage, setLanguage, verifyPrefeerLanguage } from './services/Langague';
+//services
+import { verifyPrefeerLanguage } from './services/Langague';
+import { useLocalStorage } from './services/UseLocalStorage';
+import { GlobalContext } from './services/GlobalContext';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -36,36 +41,20 @@ html {
 
 `;
 
-const getBackgroundColor = (pathname: string) => {
-  switch (pathname){
-      case '/':
-          return "#f8f5f4"
-      case '/portfolio':
-          return "#a825f4"
-      case '/cv':
-          return "#c8f544"
-      default:
-          return 'transparent'
-  }
-}
-
 
 const App = () => {
 
-  const [Pathname, setPath] = useState<string>('/')
-
-  if(!verifyPrefeerLanguage()){
-    setLanguage('PT-BR');
-  }
-
-  const Language = getLanguage();
+  const [language, setLanguage] = useLocalStorage('language', verifyPrefeerLanguage() ? "PT-BR" : "ENG")
+  const [backgroundColor, setBackgroundColor] = useLocalStorage('background', '#F5F2F2')
+  
 
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <Navbar language={Language} background={getBackgroundColor(Pathname)} setPath={setPath} />
-      <Router language={Language} setPath={setPath}/>
-    </BrowserRouter>
+    <GlobalContext.Provider value={{ language, setLanguage, backgroundColor, setBackgroundColor }}>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Router />
+      </BrowserRouter>
+    </GlobalContext.Provider>
   );
 };
 

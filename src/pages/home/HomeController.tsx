@@ -5,23 +5,19 @@
  */
 
 import React, { Component } from 'react'
+
+//view
 import HomeView from './HomeView';
 
-
-
-type Props = {
-    language: string | null,
-}
+type Props = {}
 
 type State = {}
-
 export default class Home extends Component<Props, State> {
   state = {}
 
   render() {
-    const { language } = this.props;
     return (
-        <HomeView language={language}/>
+        <HomeView />
     )
   }
 }

@@ -66,9 +66,12 @@ z-index:1;
 
 export const IconsContainer = styled(Container)`
 justify-content: center;
-margin-bottom: 3.5rem;
 a{
     margin: 16px 0px;
+    transition: 0.3s;
+    :hover{
+        transform: scale(1.2);
+    }
 }
 align-items: end;
 flex-direction: column;
@@ -264,11 +267,12 @@ border-bottom: 3px solid red;
 `
 
 export const AboutMeContentContainer = styled(Container)`
-width: 75%;
+width: 81%;
 height: 100%;
 padding: 4rem 2rem;
 display: flex;
-justify-content: center;
+justify-content: space-between;
+margin-bottom: 3rem;
 @media(max-width: 1126px){
     flex-direction: column-reverse;
     align-items: center;
@@ -311,6 +315,7 @@ align-items: center;
     width: 100%;
     align-items: center;
     transform: translateX(-20px);
+    margin: 0 0 4rem 0;
 
 }
 @media(max-width: 400px){
@@ -334,6 +339,7 @@ display: flex;
 align-items: center;
 @media(max-width: 1126px){
     height: 100%;
+    margin: 0 0 0rem 0;
 }
 `
 
