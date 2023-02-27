@@ -1,15 +1,25 @@
+/**
+ * This file has all the styles used to do the navbar component
+ * 07/02/2023
+ * @author Pedro Foltram @pedroaugustofolb@gmail.com
+ */
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+
 /* Desktop */
-export const NavbarContainer = styled.nav`
+interface NavBackGround {
+    backgroundColor?: string,
+}
+export const NavbarContainer = styled.nav<NavBackGround>`
 display: flex;
 justify-content: space-around;
 align-items: center;
-background: #f3f6f3;
+background: ${props => props.backgroundColor};
 height: 6.5rem;
 padding: 0 10rem;
-@media(max-width: 920px){
+@media(max-width: 1126px){
     padding: 0 2rem;
     justify-content: space-between;
 }
@@ -20,7 +30,7 @@ list-style: none;
 display: flex;
 li{
     margin: 1rem;
-    @media(max-width: 920px){
+    @media(max-width: 1126px){
         display:none;
     }
 }
@@ -28,7 +38,13 @@ button{
     margin: 0.5rem;
 }
 
-
+@media(min-width: 1126px){
+    li{
+        min-width: 80px;
+        display: flex;
+        justify-content: center;
+    }
+}
 `
 export const NavLi = styled.li`
 letter-spacing: 2px;
@@ -37,22 +53,31 @@ letter-spacing: 2px;
 
 export const NavLink = styled(Link)`
 text-decoration: none;
-font: 1.0625rem;
+font-size: 1.1825rem;
+font-family: 'Rubik', sans-serif;
 color: #14261C;
+@media(max-width: 1126px){
+    font-size: 0.8rem;
+}
 :hover{
     cursor:pointer;
-    color: #DC143C;
+    color: #32CD32;
 }
+
+
 `
+
 type ItemProps = {
     text?: string | null,
     to: string,
-    home?: boolean
+    home?: boolean,
+    setPath: (value: string) => void
 };
-export const NavItem = ({text, to, home}: ItemProps) => {
+export const NavItem = ({text, to, home, setPath }: ItemProps) => {
+    
     return(
         <NavLi>
-            <NavLink to={to}>
+            <NavLink to={to} onClick={() => setPath(to)}>
                 {text}
                 {home && <i className="pi pi-home" style={{fontSize: '1rem'}}/>}
             </NavLink>
@@ -67,27 +92,33 @@ interface LanguageTextProps {
 export const LanguageButton = styled.button<LanguageTextProps>`
 letter-spacing: 1px;
 font: 0.8rem;
-@media(max-width: 920px){
+@media(max-width: 1126px){
     font-size: 0.6rem;
 }
 border:none;
 background: transparent;
 opacity: 0.7;
 color: #14261C;
+position: sticky;
 :hover{
     opacity: 1;
     cursor:pointer;
-    color: #DC143C;
+    color: #32CD32;
 }
 ${props => props.active &&   
-    'color: #DC143C;'
+    'color: #32CD32;'
 }
+`
+export const Bar = styled.div`
+border-right: 1px solid #d7d7d7;
+margin-top: 7.5px;
+height: 1rem;
 `
 /*Mobile */
 
 const MobileContainer = styled.div<MobileModalProps>`
 height: 100%;
-@media(min-width: 920px){
+@media(min-width: 1126px){
     display:none;
 }
 cursor: pointer;
@@ -111,19 +142,19 @@ div{
 }
 `
 const DivToMargin = styled.div`
-@media(min-width: 920px){
+@media(min-width: 1126px){
     width: 101px;
 }
 `
 interface MobileModalProps {
     active: boolean,
+    backgroundColor?: string,
 }
 export const MobileModal = styled.div<MobileModalProps>`
-@media(min-width: 920px){
+@media(min-width: 1126px){
     display:none;
 }
-@media(max-width: 920px){
-    z-index: -99;
+@media(max-width: 1126px){
     position: absolute;
     transition: 0.3s ;
     ${props => props.active &&
@@ -132,9 +163,9 @@ export const MobileModal = styled.div<MobileModalProps>`
         left: 0;
         top: 6rem;
         width: 100vw;
-        height: 3.5rem;
-        background: #f3f6f3;
-        
+        height: 2.5rem;
+        background: ${props.backgroundColor};
+        z-index: 4;
     `  
     
     }
@@ -161,18 +192,24 @@ export const MobileStruct = ({active}: MobileStructProps) => {
     )
 }
 
-export const MobileList = styled.ul`
+export const MobileList = styled.ul<MobileStructProps>`
 width: 100%;
 height: 100%;
 display: flex;
-padding: 0 0 1rem 0;
 justify-content: center;
+align-items: center;
 list-style: none;
 overflow: hidden;
 transition: 0.3s ;
+z-index: 0;
 li{
     color: red;
     padding: 0.5rem;
     margin: 0 0.5rem;
+    
 }
+${props => !props.active &&
+    `
+    display: none;
+    `}
 `

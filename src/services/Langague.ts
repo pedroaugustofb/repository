@@ -1,3 +1,9 @@
+/**
+ * Language Service File
+ * 06/02/2023
+ * @author Pedro Foltram @pedroaugustofolb@gmail.com
+ */
+
 export const setLanguage = (language: string) => {
     localStorage.setItem('language', language);
     document.location.reload();
