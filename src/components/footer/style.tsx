@@ -108,7 +108,16 @@ grid-template-rows: 100%;
 @media(max-width: 1126px){
     width: 100%;
     padding: 1rem 2rem;
-    grid-template-columns: repeat(auto-fill, 32%);
+    grid-template-columns: repeat(auto-fill, max-content);
+
+    div{
+        padding-left: 20px;
+    }
+
+    div:first-child{
+        padding-left: 10px;
+    }
+
 }
 
 div{
@@ -116,6 +125,8 @@ div{
    margin-right: 1%;
    
 }
+
+
 
 div:last-child{
     border-right: none;
@@ -125,15 +136,59 @@ div:last-child{
 
 export const ContentItem = styled.div`
 padding-left: 10px;
+margin-top: 1rem;
+@media(max-width: 1126px){
+    margin-top: 0;
+
+}
 h6{
-    letter-spacing: 2px;
-    font-size: 14px;
-    color: #14261C;
+    font-size: 15px;
+    color: rgba(20, 38, 28, 0.7);
     border-bottom: 1px solid #387560;
+
     width: fit-content;
-    padding-bottom: 3px;
+    padding: 0 0 3px 0;
     font-family: 'Karla', sans-serif;
+    font-weight: bolder;
 }
 
 
 `
+
+export const LinkList = styled(Container)`
+padding: 1.5rem .2rem !important;
+display: grid;
+gap: 1rem 0;
+width: fit-content;
+`
+
+const Linklabel = styled.label`
+font-family: Rubik, sans-serif;
+font-size: 15px;
+color: rgba(20, 38, 28, 0.9);
+:hover{
+    cursor: pointer;
+}
+`
+
+const LinkDiv = styled.div`
+transition: .3s;
+padding: 0 !important;
+:hover{
+    transform: scale(1.1); 
+ }
+`
+
+interface FooterLinkProps {
+    children: any
+
+}
+export const FooterLink = ({ children }: FooterLinkProps) => {
+    return (
+        <LinkDiv>
+            <Linklabel>
+                {children}
+            </Linklabel>
+        </LinkDiv>
+    )
+}
