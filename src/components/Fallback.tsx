@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styled from 'styled-components'
 import { useGlobalContext } from '../services/GlobalContext';
 
@@ -38,7 +38,7 @@ const CardLoading = styled(EfectCardContainer)`
 
 type Props = {}
 
-const Fallback = (props: Props) => {
+const Fallback = ({}: Props) => {
 
     const { language } = useGlobalContext();
 

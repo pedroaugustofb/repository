@@ -4,7 +4,7 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 //view
 import PortfolioView from './PortfolioView';
