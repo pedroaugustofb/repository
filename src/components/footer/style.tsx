@@ -142,7 +142,7 @@ margin-top: 1rem;
 
 }
 h6{
-    font-size: 15px;
+    font-size: 17px;
     color: rgba(20, 38, 28, 0.7);
     border-bottom: 1px solid #387560;
 
@@ -150,6 +150,7 @@ h6{
     padding: 0 0 3px 0;
     font-family: 'Karla', sans-serif;
     font-weight: bolder;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -158,17 +159,19 @@ h6{
 export const LinkList = styled(Container)`
 padding: 1.5rem .2rem !important;
 display: grid;
-gap: 1rem 0;
-width: fit-content;
+grid-template-rows: repeat(auto-fill, 1fr);
+gap: 1.2rem 0;
+width: auto;
 `
 
 const Linklabel = styled.label`
 font-family: Rubik, sans-serif;
-font-size: 15px;
+font-size: 16px;
 color: rgba(20, 38, 28, 0.9);
 :hover{
     cursor: pointer;
 }
+text-decoration: none !important;  
 `
 
 const LinkDiv = styled.div`
@@ -177,6 +180,9 @@ padding: 0 !important;
 :hover{
     transform: scale(1.1); 
  }
+
+ display: flex;
+ flex-direction: column;
 `
 
 interface FooterLinkProps {

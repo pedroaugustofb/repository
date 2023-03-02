@@ -131,6 +131,7 @@ const StyledA = styled.a<StyleIcon>`
 hover{
     opacity: 0.7;
 }
+text-decoration: none !important;  
 `
 export const LinkedIcon = ({href, icon, color, hover, font, children}: IconProps) => {
     return (
