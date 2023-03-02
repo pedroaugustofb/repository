@@ -4,7 +4,7 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React, { useEffect, lazy } from 'react';
+import { useEffect, lazy } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useGlobalContext } from './services/GlobalContext';
 

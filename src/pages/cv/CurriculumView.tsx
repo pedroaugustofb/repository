@@ -1,14 +1,14 @@
-import React from 'react'
+
 import { useGlobalContext } from '../../services/GlobalContext';
 
 type Props = {}
 
-const CurriculumView = (props: Props) => {
+const CurriculumView = ({}: Props) => {
 
     const { language } = useGlobalContext();
 
   return (
-    <div>CurriculumView</div>
+    <div>{language}</div>
   )
 }
 

@@ -1,14 +1,14 @@
-import React from 'react'
+
 import { useGlobalContext } from '../../services/GlobalContext';
 
 type Props = {}
 
-const PortfolioView = (props: Props) => {
+const PortfolioView = ({}: Props) => {
 
     const { language } = useGlobalContext();
 
   return (
-    <div>PortfolioView</div>
+    <div>{language}</div>
   )
 }
 
