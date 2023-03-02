@@ -4,7 +4,6 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from "styled-components";
 
@@ -33,8 +32,6 @@ body {
   }
 }
 html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
 
