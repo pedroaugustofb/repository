@@ -8,8 +8,8 @@ import { useEffect, lazy } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useGlobalContext } from './context/GlobalContext';
 
-import Navbar from './components/navbar/Navbar';
-import Footer from './components/footer/Footer';
+import Navbar from './layout/navbar/Navbar';
+import Footer from './layout/footer/Footer';
 
 //components
 

@@ -5,7 +5,7 @@
  */
 
 import styled from "styled-components";
-import { BasicSection, Container } from "../BasicComponents";
+import { BasicSection, Container } from "../../components/BasicComponents";
 
 interface FooterContainerProps{
     backgroundColor?: string | null,
