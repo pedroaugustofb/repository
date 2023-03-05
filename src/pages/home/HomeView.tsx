@@ -5,7 +5,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../../services/GlobalContext';
+import { useGlobalContext } from '../../context/GlobalContext';
 
 //React-icons
 import { AiFillInstagram, AiFillLinkedin, AiOutlineGithub, AiOutlineWhatsApp } from "react-icons/ai"
@@ -29,9 +29,8 @@ import {
 //Home Styles
 import { Container, LinkedIcon, Title } from '../../components/BasicComponents';
 import { DefaultButton } from '../../components/Buttons';
-import { getText } from '../../services/Texts';
 import * as Style from './style'
-
+import TextJson from '../../data/Texts.json'
 
 const HomeView = () => {
 
@@ -65,12 +64,12 @@ const HomeView = () => {
                 <Style.WelcomeContainer width='80%' height='100%' flex center column>
                     <Style.TitleArea>
                         <Style.WelcomeTitle>
-                            {language === 'PT-BR' ? getText("Welcome Title(PT-BR)") : getText("Welcome Title(ENG)") }
+                            {language === 'PT-BR' ? TextJson['Welcome Title(ENG)'] : TextJson["Welcome Title(ENG)"] }
                         </Style.WelcomeTitle>
                     </Style.TitleArea>
                     <Style.TextArea margin='0 0  2rem 0'>
                         <Style.WelcomeText>
-                            {language === 'PT-BR' ? getText("Welcome Text(PT-BR)") : getText("Welcome Text(ENG)") }
+                            {language === 'PT-BR' ? TextJson["Welcome Text(PT-BR)"] : TextJson["Welcome Text(ENG)"] }
                         </Style.WelcomeText>
                     </Style.TextArea>
                     <Style.WelcomeButtonsContainer width='100%' height='100px'>
@@ -91,7 +90,7 @@ const HomeView = () => {
             <Container flex center width='60%'>
                 <Style.TitleAboutContainer flex center column>
                     <Style.AboutTitle color="#14261C"  fontWeight="800" fontSize='2.4rem' fontFamily="'Rubik', sans-serif;">
-                        {language === "PT-BR" ? getText("About Title(PT-BR)") : getText("About Title(ENG)")}
+                        {language === "PT-BR" ? TextJson["About Title(PT-BR)"] : TextJson["About Title(ENG)"]}
                     </Style.AboutTitle>
                     <Style.TitleLine />
                     <Style.TitleLineAnimation id="aboutAnimation"/>
@@ -109,7 +108,7 @@ const HomeView = () => {
                         <Title color="#14261C" fontSize='25px' fontWeight='800' fontFamily="'Rubik', sans-serif" mobile='18px' >{language === "PT-BR" ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " }</Title>
                     </Container>
                     <Style.TextArea padding='2rem 0' width="70%" style={{minWidth:'395px'}}>
-                        <Style.WelcomeText>{language === "PT-BR" ? getText("About me Text(PT-BR)") : getText("About me Text(ENG)")}</Style.WelcomeText>
+                        <Style.WelcomeText>{language === "PT-BR" ? TextJson["About me Text(PT-BR)"] : TextJson["About me Text(ENG)"]}</Style.WelcomeText>
                     </Style.TextArea>
                     <Container flex  width='100%' style={{ textAlign: 'left', maxWidth: '461px', }} >
                         <Title color="#14261C" fontSize='25px' fontWeight='800' fontFamily="'Rubik', sans-serif" mobile='18px' >{language === "PT-BR" ? "Experiência em Tecnologias." : "Experience in Technologies." }</Title>

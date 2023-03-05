@@ -1,5 +1,5 @@
 
-import { useGlobalContext } from '../../services/GlobalContext';
+import { useGlobalContext } from '../../context/GlobalContext';
 
 type Props = {}
 

@@ -1,6 +1,6 @@
 
 import styled from 'styled-components'
-import { useGlobalContext } from '../services/GlobalContext';
+import { useGlobalContext } from '../context/GlobalContext';
 
 const Overlay = styled.div`
   position: absolute;

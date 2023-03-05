@@ -6,7 +6,7 @@
 
 import { useEffect, lazy } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { useGlobalContext } from './services/GlobalContext';
+import { useGlobalContext } from './context/GlobalContext';
 
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
