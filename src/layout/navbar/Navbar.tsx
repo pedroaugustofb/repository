@@ -22,7 +22,7 @@ import {
 } from './style'
 
 //components
-const Fallback = lazy( () => import("../Fallback").then(module => { return { default: module.default }}))
+const Fallback = lazy( () => import("../../components/Fallback").then(module => { return { default: module.default }}))
 
 const Navbar = () => {
     const [Modal, setModal] = useState<boolean>(false);

@@ -8,14 +8,14 @@ import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../context/GlobalContext'
 
 //Footer Styles
-import { DefaultButton } from '../Buttons'
+import { DefaultButton } from '../../components/Buttons'
 import  * as Style  from './style'
 
 //React Icons
 import { RiSuitcaseFill } from 'react-icons/ri'
 import { AiFillHome, AiFillInstagram, AiFillLinkedin, AiOutlineGithub, AiOutlineWhatsApp } from 'react-icons/ai'
 import { HiClipboardDocumentList } from 'react-icons/hi2'
-import { LinkedIcon } from '../BasicComponents'
+import { LinkedIcon } from '../../components/BasicComponents'
 import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
