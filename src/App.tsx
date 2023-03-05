@@ -13,9 +13,8 @@ import { createGlobalStyle } from "styled-components";
 import Router from './Router';
 
 //services
-import { verifyPrefeerLanguage } from './services/Langague';
-import { useLocalStorage } from './services/UseLocalStorage';
-import { GlobalContext } from './services/GlobalContext';
+import { useLocalStorage } from './hooks/UseLocalStorage';
+import { GlobalContext } from './context/GlobalContext';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -41,8 +40,15 @@ html {
 
 const App = () => {
 
-  const [language, setLanguage] = useLocalStorage('language', verifyPrefeerLanguage() ? "PT-BR" : "ENG")
-  const [backgroundColor, setBackgroundColor] = useLocalStorage('background', '#F5F2F2')
+  const [backgroundColor, setBackgroundColor] = useLocalStorage('background', '#F5F2F2');
+  const [language, setLanguage] = useLocalStorage('language', 
+    localStorage.getItem('language') === null ? 
+      "ENG" 
+      : 
+      localStorage.getItem('language')
+  );
+
+
   
 
   return (

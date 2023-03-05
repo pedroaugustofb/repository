@@ -5,7 +5,7 @@
  */
 
 import { Link } from 'react-router-dom';
-import { useGlobalContext } from '../../services/GlobalContext';
+import { useGlobalContext } from '../../context/GlobalContext';
 
 //React-icons
 import { AiFillInstagram, AiFillLinkedin, AiOutlineGithub, AiOutlineWhatsApp } from "react-icons/ai"

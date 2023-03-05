@@ -6,7 +6,7 @@
 
 import { useState, lazy, Suspense} from 'react'
 import { Outlet } from 'react-router-dom';
-import { useGlobalContext } from '../../services/GlobalContext';
+import { useGlobalContext } from '../../context/GlobalContext';
 
 //Navbar Styles
 import { 
