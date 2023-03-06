@@ -77,7 +77,7 @@ export const NavItem = ({text, to, home}: ItemProps) => {
     
     return(
         <NavLi>
-            <NavLink to={to} >
+            <NavLink to={to} data-testid={`${to}`}>
                 {text}
                 {home && <i className="pi pi-home" style={{fontSize: '1rem'}}/>}
             </NavLink>

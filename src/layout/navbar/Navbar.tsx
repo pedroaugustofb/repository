@@ -37,12 +37,14 @@ const Navbar = () => {
                 <MobileStruct active={Modal}/>
                 <MobileModal active={Modal} backgroundColor={backgroundColor}>
                     <MobileList active={Modal}>
-                        <NavItem to="/" home data-testid="Home Icon"/>
+                        <NavItem to="/" home/>
                         <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio"  />
                         <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  />
                     </MobileList>
                 </MobileModal>
             </MobileButton>
+
+
             {/*Desktop*/}
             <NavList>
                 <NavItem text={language === 'PT-BR' ? 'Início' : 'Home' } to="/" />

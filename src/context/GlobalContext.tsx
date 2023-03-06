@@ -33,3 +33,5 @@ export function GlobalContextProvider ({ children }: ProviderProps) {
         </GlobalContext.Provider>
     )
 }
+
+export default useGlobalContext
