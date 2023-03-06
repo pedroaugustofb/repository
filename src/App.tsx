@@ -13,8 +13,7 @@ import { createGlobalStyle } from "styled-components";
 import Router from './Router';
 
 //services
-import { useLocalStorage } from './hooks/UseLocalStorage';
-import { GlobalContext } from './context/GlobalContext';
+import { GlobalContextProvider } from './context/GlobalContext';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -40,24 +39,13 @@ html {
 
 const App = () => {
 
-  const [backgroundColor, setBackgroundColor] = useLocalStorage('background', '#F5F2F2');
-  const [language, setLanguage] = useLocalStorage('language', 
-    localStorage.getItem('language') === null ? 
-      "ENG" 
-      : 
-      localStorage.getItem('language')
-  );
-
-
-  
-
   return (
-    <GlobalContext.Provider value={{ language, setLanguage, backgroundColor, setBackgroundColor }}>
+    <GlobalContextProvider>
       <BrowserRouter>
         <GlobalStyle />
         <Router />
       </BrowserRouter>
-    </GlobalContext.Provider>
+    </GlobalContextProvider>
   );
 };
 

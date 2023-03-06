@@ -37,9 +37,9 @@ const Navbar = () => {
                 <MobileStruct active={Modal}/>
                 <MobileModal active={Modal} backgroundColor={backgroundColor}>
                     <MobileList active={Modal}>
-                        <NavItem to="/" home />
-                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
-                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
+                        <NavItem to="/" home data-testid="Home Icon"/>
+                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio"  />
+                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  />
                     </MobileList>
                 </MobileModal>
             </MobileButton>
@@ -47,7 +47,7 @@ const Navbar = () => {
             <NavList>
                 <NavItem text={language === 'PT-BR' ? 'Início' : 'Home' } to="/" />
                 <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
-                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
+                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  />
 
             </NavList>  
             <NavList>
