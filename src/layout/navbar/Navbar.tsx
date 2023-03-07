@@ -7,6 +7,7 @@
 import { useState, lazy, Suspense, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
+import { useLocalStorage } from '../../hooks/UseLocalStorage';
 
 //Navbar Styles
 import { 
@@ -27,9 +28,10 @@ const Fallback = lazy( () => import("../../components/Fallback").then(module => 
 const Navbar = () => {
     const [Modal, setModal] = useState<boolean>(false);
 
-    const { language, setLanguage, backgroundColor } = useGlobalContext();
+    const { language, setLanguage } = useGlobalContext();
 
-    const { setBackgroundColor } = useGlobalContext();
+    const [backgroundColor, setBackgroundColor] = useLocalStorage('background', '#F5F2F2')
+
     let location = useLocation();
 
     useEffect( () => {
