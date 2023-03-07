@@ -1,15 +1,11 @@
+import { useGlobalContext } from "../../context/GlobalContext";
 
-import { useGlobalContext } from '../../context/GlobalContext';
-
-type Props = {}
+type Props = {};
 
 const CurriculumView = ({}: Props) => {
+  const { language } = useGlobalContext();
 
-    const { language } = useGlobalContext();
+  return <div>{language}</div>;
+};
 
-  return (
-    <div>{language}</div>
-  )
-}
-
-export default CurriculumView
+export default CurriculumView;

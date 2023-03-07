@@ -1,6 +1,5 @@
-
-import styled from 'styled-components'
-import { useGlobalContext } from '../context/GlobalContext';
+import styled from "styled-components";
+import { useGlobalContext } from "../context/GlobalContext";
 
 const Overlay = styled.div`
   position: absolute;
@@ -14,45 +13,51 @@ const Overlay = styled.div`
 `;
 
 const TextLoading = styled.p`
-    color: gray;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    opacity: 1;
-    margin-bottom: 35px;
+  color: gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  opacity: 1;
+  margin-bottom: 35px;
 `;
 
 const EfectCardContainer = styled.div`
-    padding: 16px;
-    border: 0.0625rem solid rgba(0, 0, 0, 0.125);
-    background: #ffffff;
+  padding: 16px;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.125);
+  background: #ffffff;
 `;
 
 const CardLoading = styled(EfectCardContainer)`
-    padding: 30px;
-    margin-top: 5rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 10px;
+  padding: 30px;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
 `;
 
-type Props = {}
+type Props = {};
 
 const Fallback = ({}: Props) => {
-
-    const { language } = useGlobalContext();
+  const { language } = useGlobalContext();
 
   return (
-    <div style={{minHeight: '80vh'}}> 
-
-    <Overlay>
+    <div style={{ minHeight: "80vh" }}>
+      <Overlay>
         <CardLoading>
-            <img src={"https://cdn.discordapp.com/attachments/730086912391643227/1072671292483965078/programmer.png"} height={120} alt="" />
-            <TextLoading>{language === "ENG" ? "Loading..." : "Carregando..." }</TextLoading>
+          <img
+            src={
+              "https://cdn.discordapp.com/attachments/730086912391643227/1072671292483965078/programmer.png"
+            }
+            height={120}
+            alt=""
+          />
+          <TextLoading>
+            {language === "ENG" ? "Loading..." : "Carregando..."}
+          </TextLoading>
         </CardLoading>
-    </Overlay>
+      </Overlay>
     </div>
-  )
-}
+  );
+};
 
-export default Fallback
+export default Fallback;

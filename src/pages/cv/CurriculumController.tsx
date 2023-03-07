@@ -4,21 +4,19 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import { Component } from 'react'
+import { Component } from "react";
 
 //view
-import CurriculumView from './CurriculumView'
+import CurriculumView from "./CurriculumView";
 
-type Props = {}
+type Props = {};
 
-type State = {}
+type State = {};
 
 export default class Curriculum extends Component<Props, State> {
-  state = {}
+  state = {};
 
   render() {
-    return (
-      <CurriculumView />
-    )
+    return <CurriculumView />;
   }
 }
