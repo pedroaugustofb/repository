@@ -20,10 +20,10 @@ import { MdEmail } from 'react-icons/md'
 
 const Footer = () => {
 
-    const { language, backgroundColor } = useGlobalContext();
+    const { language } = useGlobalContext();
 
   return (
-    <Style.FooterContainer backgroundColor={backgroundColor}>
+    <Style.FooterContainer>
         <Style.ContactMeContainer>
             <Style.FooterTitleContainer>  
                 <h2>Pedro Foltram</h2>

@@ -108,7 +108,7 @@ describe("navbar test", () => {
         //function to render the navbar component
         render(
             <BrowserRouter>
-                <GlobalContext.Provider value={{ setLanguage, language: '', backgroundColor: '', setBackgroundColor: () => {} }} >
+                <GlobalContext.Provider value={{ setLanguage, language: '' }} >
                     <Navbar />
                 </GlobalContext.Provider>
             </BrowserRouter>

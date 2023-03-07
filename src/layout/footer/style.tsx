@@ -7,14 +7,11 @@
 import styled from "styled-components";
 import { BasicSection, Container } from "../../components/BasicComponents";
 
-interface FooterContainerProps{
-    backgroundColor?: string | null,
-}
-export const FooterContainer = styled(BasicSection)<FooterContainerProps>`
+
+export const FooterContainer = styled(BasicSection)`
 width: 100vw;
 position: relative;
 z-index: 4;
-background: ${props => props.backgroundColor};
 background: #66CDAA;
 display: flex;
 flex-direction: column;
