@@ -4,8 +4,8 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import { useState, lazy, Suspense} from 'react'
-import { Outlet } from 'react-router-dom';
+import { useState, lazy, Suspense, useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 
 //Navbar Styles
@@ -29,6 +29,22 @@ const Navbar = () => {
 
     const { language, setLanguage, backgroundColor } = useGlobalContext();
 
+    const { setBackgroundColor } = useGlobalContext();
+    let location = useLocation();
+
+    useEffect( () => {
+        switch (location.pathname){
+        case '/': 
+            return setBackgroundColor("#f8f5f4")
+        case '/portfolio':
+            return setBackgroundColor("#a825f4")
+        case '/cv':
+            return setBackgroundColor("#c8f544")
+        default:
+            return setBackgroundColor('transparent')
+    }
+    }, [location])
+
     return (
         <>
         <NavbarContainer backgroundColor={backgroundColor}>
@@ -37,17 +53,19 @@ const Navbar = () => {
                 <MobileStruct active={Modal}/>
                 <MobileModal active={Modal} backgroundColor={backgroundColor}>
                     <MobileList active={Modal}>
-                        <NavItem to="/" home />
-                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
-                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
+                        <NavItem to="/" home/>
+                        <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio"  />
+                        <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  />
                     </MobileList>
                 </MobileModal>
             </MobileButton>
+
+
             {/*Desktop*/}
             <NavList>
                 <NavItem text={language === 'PT-BR' ? 'Início' : 'Home' } to="/" />
                 <NavItem text={language === 'PT-BR' ? 'Portfólio' : 'Portfolio' } to="/portfolio" />
-                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv" />
+                <NavItem text={language === 'PT-BR' ? 'Currículo' : 'Curriculum' } to="/cv"  />
 
             </NavList>  
             <NavList>
