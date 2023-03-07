@@ -1,18 +1,17 @@
 {
-        "Welcome Title(ENG)": "I'm Web Developer Pedro Foltram",
+  "Welcome Title(ENG)": "I'm Web Developer Pedro Foltram",
 
-        "Welcome Title(PT-BR)": "Pedro Foltram Desenvolvedor Web",
+  "Welcome Title(PT-BR)": "Pedro Foltram Desenvolvedor Web",
 
-        "Welcome Text(ENG)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
+  "Welcome Text(ENG)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
 
-        "Welcome Text(PT-BR)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
+  "Welcome Text(PT-BR)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
 
-        "About Title(ENG)": "About Me",
-        
-        "About Title(PT-BR)": "Sobre Mim",
+  "About Title(ENG)": "About Me",
 
-        "About me Text(ENG)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
+  "About Title(PT-BR)": "Sobre Mim",
 
-        "About me Text(PT-BR)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum."
+  "About me Text(ENG)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.",
 
+  "About me Text(PT-BR)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus luctusnec ullamcorper mattis, pulvinar dapibus leop llamcorper, lorem ipsum."
 }

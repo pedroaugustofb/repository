@@ -4,16 +4,16 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 
 //components
 //import Footer from './components/footer/Footer';
 //import Navbar from './components/navbar/Navbar';
-import Router from './Router';
+import Router from "./Router";
 
 //services
-import { GlobalContextProvider } from './context/GlobalContext';
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -36,9 +36,7 @@ html {
 
 `;
 
-
 const App = () => {
-
   return (
     <GlobalContextProvider>
       <BrowserRouter>

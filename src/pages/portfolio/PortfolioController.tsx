@@ -4,21 +4,19 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import { Component } from 'react'
+import { Component } from "react";
 
 //view
-import PortfolioView from './PortfolioView';
+import PortfolioView from "./PortfolioView";
 
-type Props = {}
+type Props = {};
 
-type State = {}
+type State = {};
 
 export default class Portfolio extends Component<Props, State> {
-  state = {}
+  state = {};
 
   render() {
-    return (
-      <PortfolioView />
-    )
+    return <PortfolioView />;
   }
 }

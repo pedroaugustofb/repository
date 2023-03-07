@@ -7,28 +7,30 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-    ghost?: boolean,
-    small?: boolean,
-    medium?: boolean,
-    width?: string,
-    height?: string,
-    borderColor?: string,
-    primaryColor?: string,
-    margin ?: string,
-
+  ghost?: boolean;
+  small?: boolean;
+  medium?: boolean;
+  width?: string;
+  height?: string;
+  borderColor?: string;
+  primaryColor?: string;
+  margin?: string;
 }
 
 export const DefaultButton = styled.button<ButtonProps>`
-border: 1px solid ${props => props.borderColor ? props.borderColor : '#32CD32'};
-border-radius: 4px;
-font-family: 'Rubik', sans-serif;
-transition: .2s;
+  border: 1px solid
+    ${(props) => (props.borderColor ? props.borderColor : "#32CD32")};
+  border-radius: 4px;
+  font-family: "Rubik", sans-serif;
+  transition: 0.2s;
 
-:hover{
+  :hover {
     cursor: pointer;
-}
+  }
 
-${props => props.ghost ? `
+  ${(props) =>
+    props.ghost
+      ? `
     background-color: transparent;
     color: #14261C;
     opacity: 0.8;
@@ -37,17 +39,18 @@ ${props => props.ghost ? `
         color: #14261C;
         opacity: 1;
     }
-    ` : `
+    `
+      : `
     background-color: rgba(144, 238, 144, 0.7);
     color: #14261C;
     :hover {
         background-color: rgba(144, 238, 144, 1);
     }
+    `}
+
+  ${(props) =>
+    props.medium &&
     `
-
-}
-
-${props => props.medium && `
     min-width: 170px;
     text-transform: uppercase;
     height: 48px;
@@ -60,7 +63,9 @@ ${props => props.medium && `
         padding: 0 10px;
     }
 `}
-${props => props.small && `
+${(props) =>
+    props.small &&
+    `
     min-width: 120px;
     text-transform: uppercase;
     height: 40px;
@@ -74,16 +79,21 @@ ${props => props.small && `
     }
 `}
 
-${props => props.width && `
+${(props) =>
+    props.width &&
+    `
     width: ${props.width};
 `}
 
-${props => props.height && `
+${(props) =>
+    props.height &&
+    `
     height: ${props.height};
 `}
 
-${props => props.margin && `
+${(props) =>
+    props.margin &&
+    `
     margin: ${props.margin};
 `}
-
-`
+`;
