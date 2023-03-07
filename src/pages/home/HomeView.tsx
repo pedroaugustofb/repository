@@ -64,7 +64,7 @@ const HomeView = () => {
                 <Style.WelcomeContainer width='80%' height='100%' flex center column>
                     <Style.TitleArea>
                         <Style.WelcomeTitle>
-                            {language === 'PT-BR' ? TextJson['Welcome Title(ENG)'] : TextJson["Welcome Title(ENG)"] }
+                            {language === 'PT-BR' ? TextJson['Welcome Title(PT-BR)'] : TextJson["Welcome Title(ENG)"] }
                         </Style.WelcomeTitle>
                     </Style.TitleArea>
                     <Style.TextArea margin='0 0  2rem 0'>

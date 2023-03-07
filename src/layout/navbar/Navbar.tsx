@@ -4,8 +4,8 @@
  * @author Pedro Foltram @pedroaugustofolb@gmail.com
  */
 
-import { useState, lazy, Suspense} from 'react'
-import { Outlet } from 'react-router-dom';
+import { useState, lazy, Suspense, useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../../context/GlobalContext';
 
 //Navbar Styles
@@ -28,6 +28,22 @@ const Navbar = () => {
     const [Modal, setModal] = useState<boolean>(false);
 
     const { language, setLanguage, backgroundColor } = useGlobalContext();
+
+    const { setBackgroundColor } = useGlobalContext();
+    let location = useLocation();
+
+    useEffect( () => {
+        switch (location.pathname){
+        case '/': 
+            return setBackgroundColor("#f8f5f4")
+        case '/portfolio':
+            return setBackgroundColor("#a825f4")
+        case '/cv':
+            return setBackgroundColor("#c8f544")
+        default:
+            return setBackgroundColor('transparent')
+    }
+    }, [location])
 
     return (
         <>

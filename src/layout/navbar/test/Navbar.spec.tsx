@@ -17,6 +17,7 @@ jest.mock('react-router', () => ({
 
 describe("navbar test", () => {
     
+    //function to render the component in stardart config
     const RenderComponent = () => {
         render(
             <BrowserRouter>
@@ -27,10 +28,9 @@ describe("navbar test", () => {
         )
     }
     
-    
     it("should render correctly", () => {
         
-        //function to render de Navbar Component
+        //function to render the Navbar Component
         RenderComponent();
 
         const PtButton = screen.getByText("PT-BR")
@@ -42,27 +42,27 @@ describe("navbar test", () => {
         const PortfolioButtons = screen.getAllByTestId('/portfolio')
         const CvButtons = screen.getAllByTestId('/cv')
       
-        //Change language Buttons
+        /** @LanguageButtons */
         expect(EngButton).toBeInTheDocument();
         expect(PtButton).toBeInTheDocument();
 
 
-        //Navbar Buttons ( Desktop and Mobile)
-            //Home Buttons
-            expect(HomeButtons[0]).toBeInTheDocument();
-            expect(HomeButtons[1]).toBeInTheDocument();
-            
-            
-            //Portfolio Buttons
-            expect(PortfolioButtons[0]).toBeInTheDocument();
-            expect(PortfolioButtons[1]).toBeInTheDocument();
 
-            //Cv Buttons
-            expect(CvButtons[0]).toBeInTheDocument();
-            expect(CvButtons[1]).toBeInTheDocument();
+        /** @NavButtons @Desktop @Mobile */
+        //Home Buttons
+        expect(HomeButtons[0]).toBeInTheDocument();
+        expect(HomeButtons[1]).toBeInTheDocument();
+        
+        
+        //Portfolio Buttons
+        expect(PortfolioButtons[0]).toBeInTheDocument();
+        expect(PortfolioButtons[1]).toBeInTheDocument();
+
+        //Cv Buttons
+        expect(CvButtons[0]).toBeInTheDocument();
+        expect(CvButtons[1]).toBeInTheDocument();
     })
     
-
     //to check if the portfolio and curriculumns buttons are going to their routes
     it.each([ 
         ["home", "/"],
@@ -76,7 +76,6 @@ describe("navbar test", () => {
 
         //to get the array of elements
         const buttons = screen.getAllByTestId(`${text !== "home" ? path : '/'}`);
-
 
         buttons.forEach( elem => {
             
