@@ -1,11 +1,19 @@
 import { useGlobalContext } from "../../context/GlobalContext";
+import Repository from "../../types/Repository";
 
-type Props = {};
+type Props = {
+  repositories: Repository[];
+}
 
-const PortfolioView = ({}: Props) => {
+const PortfolioView = ({repositories}: Props) => {
   const { language } = useGlobalContext();
+  console.log(repositories)
 
-  return <div>{language}</div>;
+  return (
+    <div style={{height: '50vh'}}>
+      {language} 
+    </div>
+  );
 };
 
 export default PortfolioView;

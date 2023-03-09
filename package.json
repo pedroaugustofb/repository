@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

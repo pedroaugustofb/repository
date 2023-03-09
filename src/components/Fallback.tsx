@@ -35,9 +35,11 @@ const CardLoading = styled(EfectCardContainer)`
   border-radius: 10px;
 `;
 
-type Props = {};
+type Props = {
+  text?: string;
+};
 
-const Fallback = ({}: Props) => {
+const Fallback = ({text}: Props) => {
   const { language } = useGlobalContext();
 
   return (
@@ -52,7 +54,7 @@ const Fallback = ({}: Props) => {
             alt=""
           />
           <TextLoading>
-            {language === "ENG" ? "Loading..." : "Carregando..."}
+            {text ? text : language === "ENG" ? "Loading..." : "Carregando..."}
           </TextLoading>
         </CardLoading>
       </Overlay>
