@@ -15,7 +15,7 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaJava } from "react-icons/fa";
 
 import {
   SiJavascript,
@@ -27,7 +27,6 @@ import {
   SiCplusplus,
   SiExpress,
   SiMysql,
-  SiJava,
   SiSpringboot,
 } from "react-icons/si";
 
@@ -249,7 +248,7 @@ const HomeView = () => {
                 <SiCplusplus />
               </Style.IconDiv>
               <Style.IconDiv>
-                <SiJava />
+                <FaJava />
               </Style.IconDiv>
               <Style.IconDiv>
                 <SiSpringboot />
